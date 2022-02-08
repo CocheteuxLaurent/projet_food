@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projet_food/Classes/ListeProduits.dart';
 
 class SecondePage extends StatefulWidget {
   const SecondePage({Key? key}) : super(key: key);
@@ -11,13 +10,10 @@ class SecondePage extends StatefulWidget {
 class _SecondePageState extends State<SecondePage> {
   @override
   Widget build(BuildContext context) {
-    List<Produits> produits = [
-      Produits("assets/Burger.jpg", "Burger", "description 1", 10, false),
-    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Accueil',
+          'Carte',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
@@ -35,17 +31,17 @@ class _SecondePageState extends State<SecondePage> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-            child: Row(
-              children: [
-                Text(
-                  'Nos Suggestions',
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.start,
-                ),
-              ],
+          ListTile(
+            title: Text(
+              'Burger',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            trailing: Image.asset(
+              "assets/burger-au-fromage.png",
+              height: 50,
+              width: 50,
             ),
           ),
         ],

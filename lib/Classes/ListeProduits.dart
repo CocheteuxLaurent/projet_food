@@ -1,9 +1,9 @@
 class Produits {
-  String image;
-  String nom;
-  String description;
-  int prix;
-  bool ValeurCase;
+  late String image;
+  late String nom;
+  late String description;
+  late int prix;
+  late bool ValeurCase;
 
   Produits(
       String image, String nom, String description, int prix, bool ValeurCase) {
