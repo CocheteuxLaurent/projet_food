@@ -1,5 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:projet_food/Classes/ListeProduits.dart';
+import 'package:projet_food/CategoriePage.dart';
 
 class SecondePage extends StatefulWidget {
   const SecondePage({Key? key}) : super(key: key);
@@ -11,9 +13,6 @@ class SecondePage extends StatefulWidget {
 class _SecondePageState extends State<SecondePage> {
   @override
   Widget build(BuildContext context) {
-    List<Produits> produits = [
-      Produits("assets/Burger.jpg", "Burger", "description 1", 10, false),
-    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -36,16 +35,54 @@ class _SecondePageState extends State<SecondePage> {
       body: Column(
         children: [
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  'Nos Suggestions',
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.start,
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CategoriePage()));
+                  },
+                  child: Text('Categorie'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Recettes'),
                 ),
               ],
+            ),
+          ),
+          Expanded(
+            child: FutureBuilder(
+              builder: (context, snapshot) {
+                var produits = json.decode(snapshot.data.toString());
+                return GridView.builder(
+                  itemCount: produits.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    print(produits[index]['nom'].toString());
+                    var nom = produits[index]['nom'];
+                    bool test = false;
+                    if (nom == "burger") {
+                      test = true;
+                    }
+                    return test
+                        ? Card(
+                            margin: EdgeInsets.all(30),
+                            child: Text(nom),
+                          )
+                        : Text('data');
+                  },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisSpacing: 20,
+                    crossAxisCount: 2,
+                  ),
+                );
+              },
+              future: DefaultAssetBundle.of(context)
+                  .loadString("assets/produitsJson.json"),
             ),
           ),
         ],

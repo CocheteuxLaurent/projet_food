@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SecondePage extends StatefulWidget {
-  const SecondePage({Key? key}) : super(key: key);
+class CategoriePage extends StatefulWidget {
+  const CategoriePage({Key? key}) : super(key: key);
 
   @override
-  State<SecondePage> createState() => _SecondePageState();
+  State<CategoriePage> createState() => _CategoriePageState();
 }
 
-class _SecondePageState extends State<SecondePage> {
+class _CategoriePageState extends State<CategoriePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,19 +31,45 @@ class _SecondePageState extends State<SecondePage> {
       ),
       body: Column(
         children: [
-          ListTile(
-            title: Text(
-              'Burger',
-              style: TextStyle(
-                fontSize: 18,
-              ),
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: Row(
+              children: [
+                Card(
+                  elevation: 5.0,
+                  color: Color.fromRGBO(111, 186, 255, 100),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  margin: EdgeInsets.all(20),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          'Burger',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Divider(
+                          thickness: 2,
+                          height: 30,
+                          indent: 100,
+                          color: Colors.white,
+                          endIndent: 100,
+                        ),
+                        Image.asset("assets/burger-au-fromage.png",
+                            width: 40, height: 40),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            trailing: Image.asset(
-              "assets/burger-au-fromage.png",
-              height: 50,
-              width: 50,
-            ),
-          ),
+          )
         ],
       ),
     );
