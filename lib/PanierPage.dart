@@ -10,6 +10,25 @@ class PanierPage extends StatefulWidget {
 class _PanierPageState extends State<PanierPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Panier',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(111, 186, 255, 100),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.shopping_basket,
+              size: 30,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
