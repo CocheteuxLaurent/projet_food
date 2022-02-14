@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_food/Classes/classCategorie.dart';
 
 class CategoriePage extends StatefulWidget {
   const CategoriePage({Key? key}) : super(key: key);
@@ -8,12 +9,19 @@ class CategoriePage extends StatefulWidget {
 }
 
 class _CategoriePageState extends State<CategoriePage> {
+  List<Categorie> categorie = [
+    Categorie("assets/burger-au-fromage.png", "Burger"),
+    Categorie("assets", "Pizza"),
+    Categorie("assets", "Salade"),
+    Categorie("assets", "Gauffre"),
+    Categorie("assets", "Glace"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Carte',
+          'Categorie',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
@@ -29,73 +37,51 @@ class _CategoriePageState extends State<CategoriePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Card(
-            elevation: 5.0,
-            color: Color.fromRGBO(111, 186, 255, 100),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            margin: EdgeInsets.all(20),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Text(
-                    'Burger',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Divider(
-                    thickness: 2,
-                    height: 30,
-                    indent: 100,
-                    color: Colors.white,
-                    endIndent: 100,
-                  ),
-                  Image.asset("assets/burger-au-fromage.png",
-                      width: 40, height: 40),
-                ],
+      body: Container(
+        child: GridView.builder(
+          itemCount: 1,
+          itemBuilder: (context, index) {
+            return Card(
+              elevation: 5.0,
+              color: Color.fromRGBO(111, 186, 255, 100),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
               ),
-            ),
-          ),
-          Card(
-            elevation: 5.0,
-            color: Color.fromRGBO(111, 186, 255, 100),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-            margin: EdgeInsets.all(20),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Text(
-                    'Burger',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white,
+              margin: EdgeInsets.all(20),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Text(
+                      categorie[index].nom,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 2,
-                    height: 30,
-                    indent: 100,
-                    color: Colors.white,
-                    endIndent: 100,
-                  ),
-                  Image.asset("assets/burger-au-fromage.png",
-                      width: 40, height: 40),
-                ],
+                    Divider(
+                      thickness: 2,
+                      height: 30,
+                      indent: 100,
+                      color: Colors.white,
+                      endIndent: 100,
+                    ),
+                    Image(
+                      width: 40,
+                      height: 40,
+                      image: AssetImage(
+                        categorie[index].image,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            );
+          },
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+        ),
       ),
     );
   }

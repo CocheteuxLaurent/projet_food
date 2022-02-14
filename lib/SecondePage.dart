@@ -118,21 +118,29 @@ class _SecondePageState extends State<SecondePage> {
                                   ],
                                 ),
                               ),
-                              Flexible(
+                              Expanded(
                                 child: Padding(
                                   padding: EdgeInsets.all(10),
                                   child: Text(
                                     '${produits[index]['desciption']}',
+                                    maxLines: 5,
                                   ),
                                 ),
                               ),
-                              Checkbox(
-                                  value: checkbox,
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      checkbox = value!;
-                                    });
-                                  })
+                              Expanded(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Checkbox(
+                                        value: checkbox,
+                                        onChanged: (bool? value) {
+                                          setState(() {
+                                            checkbox = value!;
+                                          });
+                                        }),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ),

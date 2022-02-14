@@ -4,23 +4,55 @@
     "nom": "Burger",
     "image": "Burger.png",
     "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
-    "prix": 30,
+    "prix": 6.80,
     "valeurBool": false
   },
   {
     "id": 1,
-    "nom": "Pizza",
+    "nom": "Double Cheese",
     "image": "Burger.png",
     "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
-    "prix": 19.99,
+    "prix": 8.80,
     "valeurBool": false
   },
   {
     "id": 2,
-    "nom": "Gauffre",
+    "nom": "Triple Cheese",
     "image": "Burger.png",
     "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
-    "prix": 12.99,
+    "prix": 10.80,
+    "valeurBool": false
+  },
+  {
+    "id": 3,
+    "nom": "Chicken Burger",
+    "image": "Burger.png",
+    "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
+    "prix": 11.80,
+    "valeurBool": false
+  },
+  {
+    "id": 4,
+    "nom": "Orientale",
+    "image": "Burger.png",
+    "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
+    "prix": 14.80,
+    "valeurBool": false
+  },
+  {
+    "id": 5,
+    "nom": "Chèvre miel",
+    "image": "Burger.png",
+    "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
+    "prix": 16.80,
+    "valeurBool": false
+  },
+  {
+    "id": 6,
+    "nom": "Chorizo",
+    "image": "Burger.png",
+    "desciption": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise ",
+    "prix": 16.80,
     "valeurBool": false
   }
 ]
