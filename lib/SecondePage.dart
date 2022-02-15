@@ -22,7 +22,7 @@ class _SecondePageState extends State<SecondePage> {
     totalPanier--;
   }
 
-  checkedSelected() {
+  checkboxSelect() {
     setState(() {
       checkbox = true;
       if (checkbox != true) {}
