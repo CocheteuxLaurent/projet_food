@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:projet_food/CategoriePage.dart';
 import 'package:projet_food/PanierPage.dart';
+import 'package:projet_food/DetailsPage.dart';
 
 class SecondePage extends StatefulWidget {
   const SecondePage({Key? key}) : super(key: key);
@@ -32,28 +33,35 @@ class _SecondePageState extends State<SecondePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Accueil',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          centerTitle: true,
-          backgroundColor: Color.fromRGBO(111, 186, 255, 100),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PanierPage()));
-              },
-              icon: Icon(
-                Icons.shopping_basket,
-                size: 30,
-                color: Colors.white,
-              ),
-            ),
-          ],
+      appBar: AppBar(
+        title: Text(
+          'Accueil',
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
-        body: Column(
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(111, 186, 255, 100),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PanierPage()));
+            },
+            icon: Icon(
+              Icons.shopping_basket,
+              size: 30,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      body: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DetailsPage()),
+          );
+        },
+        child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -157,6 +165,8 @@ class _SecondePageState extends State<SecondePage> {
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

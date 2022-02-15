@@ -42,7 +42,7 @@ class _CategoriePageState extends State<CategoriePage> {
       ),
       body: Container(
         child: GridView.builder(
-          itemCount: 1,
+          itemCount: 8,
           itemBuilder: (context, index) {
             return Card(
               elevation: 5.0,
