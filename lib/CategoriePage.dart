@@ -11,10 +11,13 @@ class CategoriePage extends StatefulWidget {
 class _CategoriePageState extends State<CategoriePage> {
   List<Categorie> categorie = [
     Categorie("assets/burger-au-fromage.png", "Burger"),
-    Categorie("assets", "Pizza"),
-    Categorie("assets", "Salade"),
-    Categorie("assets", "Gauffre"),
-    Categorie("assets", "Glace"),
+    Categorie("assets/pizza.png", "Pizza"),
+    Categorie("assets/salad.png", "Salade"),
+    Categorie("assets/gaufres.png", "Gauffre"),
+    Categorie("assets/cornet-de-glace.png", "Glace"),
+    Categorie("assets/biscuits.png", "Cookie"),
+    Categorie("assets/biscuits.png", "Acompagnement"),
+    Categorie("assets/boissons-non-alcoolisees.png", "Boisson"),
   ];
   @override
   Widget build(BuildContext context) {
