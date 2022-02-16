@@ -26,7 +26,9 @@ class _SecondePageState extends State<SecondePage> {
   checkboxSelect() {
     setState(() {
       checkbox = true;
-      if (checkbox != true) {}
+      if (checkbox != true) {
+        checkbox = false;
+      }
     });
   }
 

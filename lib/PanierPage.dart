@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_food/CommandePage.dart';
 
 class PanierPage extends StatefulWidget {
   const PanierPage({Key? key}) : super(key: key);
@@ -26,6 +27,17 @@ class _PanierPageState extends State<PanierPage> {
               size: 30,
               color: Colors.white,
             ),
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CommandePage()));
+            },
+            child: Text('Commander'),
           ),
         ],
       ),
