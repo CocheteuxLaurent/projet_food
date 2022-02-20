@@ -30,32 +30,27 @@ class _CommandePageState extends State<CommandePage> {
           ),
         ],
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Entrer votre adresse de livraison',
-            ),
+          TextField(
+            decoration: InputDecoration(
+                hintText: "Votre adresse",
+                labelText: "Adresse",
+                labelStyle: TextStyle(fontSize: 24, color: Colors.black),
+                border: OutlineInputBorder()),
+            obscureText: false,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => DernierePage()));
-                  },
-                  child: Text('Finaliser'),
-                ),
-              ],
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DernierePage()));
+              },
+              child: Text('Valider'),
             ),
-          ),
+          )
         ],
       ),
     );
