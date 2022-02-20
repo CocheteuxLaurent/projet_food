@@ -2,7 +2,10 @@ class Categorie {
   late String nom;
   late String image;
 
-  Categorie(String image, String nom) {
+  Categorie(
+    this.nom,
+    this.image,
+  ) {
     this.nom = nom;
     this.image = image;
   }

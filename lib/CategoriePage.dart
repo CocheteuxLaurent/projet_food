@@ -10,14 +10,14 @@ class CategoriePage extends StatefulWidget {
 
 class _CategoriePageState extends State<CategoriePage> {
   List<Categorie> categorie = [
-    Categorie("assets/burger-au-fromage.png", "Burger"),
-    Categorie("assets/pizza.png", "Pizza"),
-    Categorie("assets/salad.png", "Salade"),
-    Categorie("assets/gaufres.png", "Gauffre"),
-    Categorie("assets/cornet-de-glace.png", "Glace"),
-    Categorie("assets/biscuits.png", "Cookie"),
-    Categorie("assets/biscuits.png", "Acompagnement"),
-    Categorie("assets/boissons-non-alcoolisees.png", "Boisson"),
+    Categorie("burger", "assets/burger-au-fromage.png"),
+    Categorie("pizza", "assets/pizza.png"),
+    Categorie("Salade", "assets/salad.png"),
+    Categorie("Gauffre", "assets/gaufres.png"),
+    Categorie("Glace", "assets/cornet-de-glace.png"),
+    Categorie("Cookie", "assets/biscuits.png"),
+    Categorie("Acompagnement", "assets/biscuits.png"),
+    Categorie("Boisson", "assets/boissons-non-alcoolisees.png"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _CategoriePageState extends State<CategoriePage> {
         ],
       ),
       body: Container(
-        child: GridView.builder(
+        child: ListView.builder(
           itemCount: 8,
           itemBuilder: (context, index) {
             return Card(
@@ -82,8 +82,6 @@ class _CategoriePageState extends State<CategoriePage> {
               ),
             );
           },
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
         ),
       ),
     );
