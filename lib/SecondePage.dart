@@ -44,6 +44,8 @@ class _SecondePageState extends State<SecondePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    var produitSelectionner = produits.where((element) => element.valeurBool);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -55,8 +57,13 @@ class _SecondePageState extends State<SecondePage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PanierPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PanierPage(
+                            totalPanier: totalPanier,
+                            produitSelectionner: produitSelectionner,
+                          )));
             },
             icon: Icon(
               Icons.shopping_basket,
@@ -115,6 +122,7 @@ class _SecondePageState extends State<SecondePage> {
                                   imageProduit: imageProduit,
                                   prix: prix,
                                   description: description,
+                                  valeurBool: valeurBool,
                                 )));
                   },
                   child: Padding(

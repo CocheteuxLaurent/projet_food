@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:projet_food/CommandePage.dart';
 
 class PanierPage extends StatefulWidget {
-  const PanierPage({Key? key}) : super(key: key);
+  final int totalPanier;
+  final produitSelectionner;
+  const PanierPage(
+      {Key? key, required this.totalPanier, this.produitSelectionner})
+      : super(key: key);
 
   @override
   State<PanierPage> createState() => _PanierPageState();
@@ -32,12 +36,25 @@ class _PanierPageState extends State<PanierPage> {
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CommandePage()));
-            },
-            child: Text('Commander'),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+            child: Row(
+              children: [
+                Text(
+                  'Votre Panier',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ],
+            ),
+          ),
+          Flexible(
+            child: ListView.builder(
+                itemCount: produitSelectionner.lenght,
+                itemBuilder: (BuildContext context, int index) {}),
           ),
         ],
       ),
