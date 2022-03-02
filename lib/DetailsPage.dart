@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:projet_food/Classes/classProduit.dart';
+import 'package:badges/badges.dart';
 
 class DetailsPage extends StatefulWidget {
-  DetailsPage(
-      {Key? key,
-      this.nomProduit,
-      this.imageProduit,
-      this.prix,
-      this.description,
-      required this.valeurBool})
-      : super(key: key);
+  DetailsPage({
+    Key? key,
+    this.nomProduit,
+    this.imageProduit,
+    this.prix,
+    this.description,
+    this.valeurBool,
+    this.articlePanier,
+  }) : super(key: key);
 
   final nomProduit;
   final imageProduit;
   final prix;
   final description;
-  bool valeurBool;
+  final valeurBool;
+  final articlePanier;
 
   @override
   State<DetailsPage> createState() => _DetailsPageState();
@@ -39,19 +42,27 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Details',
+          'Panier',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(111, 186, 255, 100),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_basket,
-              size: 30,
-              color: Colors.white,
+          Badge(
+            position: BadgePosition.topEnd(top: 5, end: 0),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.shopping_basket,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ),
             ),
+            badgeContent: Text(widget.articlePanier.toString()),
+            badgeColor: Colors.white,
           ),
         ],
       ),
@@ -60,44 +71,25 @@ class _DetailsPageState extends State<DetailsPage> {
           Center(
             child: Image.asset(widget.imageProduit.toString()),
           ),
-          Flexible(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  Flexible(
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              widget.nomProduit,
-                              style: TextStyle(
-                                fontSize: 15,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Text(widget.description),
-                        Checkbox(
-                          value: widget.valeurBool,
-                          onChanged: (bool value) {
-                            setState(() {
-                              widget.valeurBool = value;
-                            });
-
-                            if (widget.valeurBool != true) {
-                              fonctionAddition();
-                            } else {
-                              fonctionSoustraction(checkbox);
-                            }
-                          },
-                        ),
-                      ],
-                    ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.nomProduit,
+                  style: TextStyle(
+                    fontSize: 15,
                   ),
-                ],
-              ),
+                ),
+                Text(widget.prix.toString() + '€'),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(15),
+              child: Text(widget.description),
             ),
           ),
         ],

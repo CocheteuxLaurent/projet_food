@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart';
 import 'package:projet_food/CategoriePage.dart';
 import 'package:projet_food/PanierPage.dart';
 import 'package:projet_food/DetailsPage.dart';
@@ -55,26 +56,35 @@ class _SecondePageState extends State<SecondePage> {
         centerTitle: true,
         backgroundColor: Color.fromRGBO(111, 186, 255, 100),
         actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PanierPage(
-                            totalPanier: totalPanier,
-                            produitSelectionner: produitSelectionner,
-                          )));
-            },
-            icon: Icon(
-              Icons.shopping_basket,
-              size: 30,
-              color: Colors.white,
+          Badge(
+            position: BadgePosition.topEnd(top: 5, end: 0),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PanierPage(
+                                articlePanier: produitSelectionner.length,
+                                produitSelectionner: produitSelectionner,
+                              )));
+                },
+                icon: Icon(
+                  Icons.shopping_basket,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ),
             ),
+            badgeContent: Text(totalPanier.toString()),
+            badgeColor: Colors.white,
           ),
         ],
       ),
       body: Column(
         children: [
+          //Text(totalPanier.toString()),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -114,6 +124,7 @@ class _SecondePageState extends State<SecondePage> {
                     var prix = produits[index].prix;
                     var description = produits[index].description;
                     var valeurBool = produits[index].valeurBool;
+                    var articlePanier = produitSelectionner.length;
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -123,6 +134,7 @@ class _SecondePageState extends State<SecondePage> {
                                   prix: prix,
                                   description: description,
                                   valeurBool: valeurBool,
+                                  articlePanier: articlePanier,
                                 )));
                   },
                   child: Padding(
@@ -162,7 +174,7 @@ class _SecondePageState extends State<SecondePage> {
                               padding: EdgeInsets.all(10),
                               child: Text(
                                 '${produits[index].description}',
-                                maxLines: 5,
+                                maxLines: 3,
                               ),
                             ),
                           ),
@@ -176,6 +188,11 @@ class _SecondePageState extends State<SecondePage> {
                                       setState(() {
                                         produits[index].valeurBool = value!;
                                       });
+                                      if (value == true) {
+                                        fonctionAddition();
+                                      } else {
+                                        fonctionSoustraction();
+                                      }
                                     }),
                               ],
                             ),
@@ -188,6 +205,7 @@ class _SecondePageState extends State<SecondePage> {
               },
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 20,
+                mainAxisExtent: 350,
                 crossAxisCount: 2,
               ),
             ),
