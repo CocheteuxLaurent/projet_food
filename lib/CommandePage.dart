@@ -31,26 +31,22 @@ class _CommandePageState extends State<CommandePage> {
         ],
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TextField(
-            decoration: InputDecoration(
-                hintText: "Votre adresse",
-                labelText: "Adresse",
-                labelStyle: TextStyle(fontSize: 24, color: Colors.black),
-                border: OutlineInputBorder()),
-            obscureText: false,
-          ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DernierePage()));
-              },
-              child: Text('Valider'),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+            child: Row(
+              children: [
+                Text(
+                  'Votre Commande',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ],
             ),
-          )
+          ),
         ],
       ),
     );
