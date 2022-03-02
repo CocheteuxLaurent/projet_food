@@ -65,14 +65,49 @@ class _PanierPageState extends State<PanierPage> {
                 itemCount: widget.produitSelectionner.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    child: Column(
+                    child: Row(
                       children: [
-                        Image.asset(
+                        Image(
+                          width: 100,
+                          image: AssetImage(
+                            widget.produitSelectionner
+                                .toList()[index]
+                                .imageProduit,
+                          ),
+                        ),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Text(
+                                widget.produitSelectionner
+                                    .toList()[index]
+                                    .nomProduit,
+                              )
+                            ],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CommandePage()));
+                          },
+                          child: Text('Commander'),
+                        ),
+                        /*Text(
+                          widget.produitSelectionner
+                              .toList()[index]
+                              .description,
+                        ),
+                        */
+                        /*Image.asset(
                           widget.produitSelectionner
                               .toList()[index]
                               .imageProduit,
                           width: 185,
                         ),
+                        */
                         /*Expanded(
                           child: Row(
                             children: [
@@ -85,7 +120,7 @@ class _PanierPageState extends State<PanierPage> {
                           ),
                         ),
                         */
-                        Padding(
+                        /* Padding(
                           padding: EdgeInsets.all(10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,7 +139,8 @@ class _PanierPageState extends State<PanierPage> {
                               ),
                             ],
                           ),
-                        ),
+                        ),*/
+                        /*
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
@@ -113,7 +149,7 @@ class _PanierPageState extends State<PanierPage> {
                                     builder: (context) => CommandePage()));
                           },
                           child: Text('Commander'),
-                        ),
+                        ),*/
                         /*Expanded(
                           child: Padding(
                             padding: EdgeInsets.all(15),

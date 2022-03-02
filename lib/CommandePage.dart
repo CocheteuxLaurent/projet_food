@@ -47,6 +47,26 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Entrer votre adresse',
+              ),
+              obscureText: true,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Entrer votre adresse',
+              ),
+              obscureText: true,
+            ),
+          ),
         ],
       ),
     );
