@@ -62,109 +62,47 @@ class _PanierPageState extends State<PanierPage> {
           ),
           Flexible(
             child: ListView.builder(
-                itemCount: widget.produitSelectionner.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    child: Row(
-                      children: [
-                        Image(
-                          width: 100,
-                          image: AssetImage(
-                            widget.produitSelectionner
-                                .toList()[index]
-                                .imageProduit,
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            children: [
-                              Text(
-                                widget.produitSelectionner
-                                    .toList()[index]
-                                    .nomProduit,
-                              )
-                            ],
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => CommandePage()));
-                          },
-                          child: Text('Commander'),
-                        ),
-                        /*Text(
-                          widget.produitSelectionner
-                              .toList()[index]
-                              .description,
-                        ),
-                        */
-                        /*Image.asset(
+              itemCount: widget.produitSelectionner.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Center(
+                  child: Row(
+                    children: [
+                      Image(
+                        width: 100,
+                        image: AssetImage(
                           widget.produitSelectionner
                               .toList()[index]
                               .imageProduit,
-                          width: 185,
                         ),
-                        */
-                        /*Expanded(
-                          child: Row(
-                            children: [
-                              Text(
-                                widget.produitSelectionner
-                                    .toList()[index]
-                                    .nomProduit,
-                              )
-                            ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            widget.produitSelectionner
+                                .toList()[index]
+                                .nomProduit,
                           ),
-                        ),
-                        */
-                        /* Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                widget.produitSelectionner
-                                    .toList()[index]
-                                    .nomProduit,
-                              ),
-                              Text(
-                                widget.produitSelectionner
-                                        .toList()[index]
-                                        .prix
-                                        .toString() +
-                                    '€',
-                              ),
-                            ],
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => CommandePage(
+                                            articlePanier: widget
+                                                .produitSelectionner.length,
+                                            produitSelectionner:
+                                                widget.produitSelectionner,
+                                          )));
+                            },
+                            child: Text('Commander'),
                           ),
-                        ),*/
-                        /*
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => CommandePage()));
-                          },
-                          child: Text('Commander'),
-                        ),*/
-                        /*Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.all(15),
-                            child: Text(
-                              widget.produitSelectionner
-                                  .toList()[index]
-                                  .description,
-                            ),
-                          ),
-                        ),
-                        */
-                      ],
-                    ),
-                  );
-                }),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),
