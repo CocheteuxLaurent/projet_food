@@ -79,7 +79,106 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
-          Padding(
+          Flexible(
+            child: ListView.builder(
+              itemCount: widget.produitSelectionner.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  margin: EdgeInsets.all(10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image(
+                          width: 100,
+                          image: AssetImage(
+                            widget.produitSelectionner
+                                .toList()[index]
+                                .imageProduit,
+                          ),
+                        ),
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              widget.produitSelectionner
+                                  .toList()[index]
+                                  .description,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orangeAccent,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              widget.produitSelectionner
+                                  .toList()[index]
+                                  .nomProduit,
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              widget.produitSelectionner
+                                      .toList()[index]
+                                      .prix
+                                      .toString() +
+                                  '€',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Entrer votre adresse',
+                      ),
+                      obscureText: true,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2.5,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Entrer votre adresse',
+                      ),
+                      obscureText: true,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          /*Padding(
             padding: EdgeInsets.all(10),
             child: TextFormField(
               decoration: const InputDecoration(
@@ -98,7 +197,7 @@ class _CommandePageState extends State<CommandePage> {
               ),
               obscureText: true,
             ),
-          ),
+          ),*/
         ],
       ),
     );

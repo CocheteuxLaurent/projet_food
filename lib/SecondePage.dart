@@ -145,10 +145,6 @@ class _SecondePageState extends State<SecondePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          // Image.asset(
-                          //   'assets/${produits[index].imageProduit}',
-                          //   height: 100,
-                          // ),
                           Image(
                             image: AssetImage(
                               produits[index].imageProduit,
@@ -161,9 +157,17 @@ class _SecondePageState extends State<SecondePage> {
                               children: [
                                 Text(
                                   produits[index].nomProduit.toString(),
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 Text(
                                   '${produits[index].prix}' + '€',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 )
                               ],
                             ),
@@ -174,6 +178,10 @@ class _SecondePageState extends State<SecondePage> {
                               child: Text(
                                 '${produits[index].description}',
                                 maxLines: 3,
+                                style: TextStyle(
+                                  color: Colors.orangeAccent,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),

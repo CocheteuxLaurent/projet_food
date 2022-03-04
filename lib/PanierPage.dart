@@ -86,7 +86,10 @@ class _PanierPageState extends State<PanierPage> {
                               widget.produitSelectionner
                                   .toList()[index]
                                   .description,
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orangeAccent,
+                              ),
                             ),
                           ),
                         ),
@@ -96,12 +99,20 @@ class _PanierPageState extends State<PanierPage> {
                               widget.produitSelectionner
                                   .toList()[index]
                                   .nomProduit,
+                              style: TextStyle(
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
-                              widget.produitSelectionner.toList()[index].prix,
+                              widget.produitSelectionner
+                                      .toList()[index]
+                                      .prix
+                                      .toString() +
+                                  '€',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.red,
@@ -118,8 +129,13 @@ class _PanierPageState extends State<PanierPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CommandePage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CommandePage(
+                            articlePanier: widget.produitSelectionner.length,
+                            produitSelectionner: widget.produitSelectionner,
+                          )));
             },
             child: Text('Commander'),
           ),
