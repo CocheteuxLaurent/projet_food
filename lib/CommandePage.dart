@@ -158,7 +158,9 @@ class _CommandePageState extends State<CommandePage> {
                         border: UnderlineInputBorder(),
                         labelText: 'Entrer votre adresse',
                       ),
-                      obscureText: true,
+                      obscureText: false,
+                      //controller:
+                      // TextEditingController(text: 'Champ obligatoire'),
                     ),
                   ),
                 ),
@@ -169,7 +171,7 @@ class _CommandePageState extends State<CommandePage> {
                     child: TextFormField(
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
-                        labelText: 'Entrer votre adresse',
+                        labelText: 'Entrer votre numèro de carte',
                       ),
                       obscureText: true,
                     ),

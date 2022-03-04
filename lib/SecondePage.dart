@@ -15,6 +15,8 @@ class SecondePage extends StatefulWidget {
 
 class _SecondePageState extends State<SecondePage> {
   int totalPanier = 0;
+  int sommePanier = 0; //variable pour la somme du panier
+  int quantiter = 0; // variable pour la quantite rentrer
   bool checkbox = false;
 
   fonctionAddition() {
@@ -24,6 +26,9 @@ class _SecondePageState extends State<SecondePage> {
   fonctionSoustraction() {
     totalPanier--;
   }
+
+//fonction pour calculer la somme du panier
+  fonctionSommePanier() {}
 
   List<Produit> produits = [
     Produit("burger", "Burger", 7, "assets/Burger.png", false,
@@ -189,6 +194,19 @@ class _SecondePageState extends State<SecondePage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
+                                /*Expanded(
+                                  child: TextFormField(
+                                    decoration: const InputDecoration(
+                                      border: UnderlineInputBorder(),
+                                      labelText: 'Entrer la quantité',
+                                    ),
+                                    obscureText: false,
+
+                                    //controller:
+                                    // TextEditingController(text: 'Champ obligatoire'),
+                                  ),
+                                ),
+                                */
                                 Checkbox(
                                     value: produits[index].valeurBool,
                                     onChanged: (value) {

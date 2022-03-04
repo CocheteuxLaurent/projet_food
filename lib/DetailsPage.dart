@@ -42,7 +42,7 @@ class _DetailsPageState extends State<DetailsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Panier',
+          'Description',
           style: TextStyle(color: Colors.white, fontSize: 20),
         ),
         centerTitle: true,
@@ -79,17 +79,33 @@ class _DetailsPageState extends State<DetailsPage> {
                 Text(
                   widget.nomProduit,
                   style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
                 ),
-                Text(widget.prix.toString() + '€'),
+                Text(
+                  widget.prix.toString() + '€',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
             child: Padding(
               padding: EdgeInsets.all(15),
-              child: Text(widget.description),
+              child: Text(
+                widget.description,
+                style: TextStyle(
+                  color: Colors.orangeAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+              ),
             ),
           ),
         ],
