@@ -16,7 +16,7 @@ class SecondePage extends StatefulWidget {
 class _SecondePageState extends State<SecondePage> {
   int totalPanier = 0;
   int sommePanier = 0; //variable pour la somme du panier
-  int quantiter = 0; // variable pour la quantite rentrer
+  //int quantiter = 0; // variable pour la quantite rentrer
   bool checkbox = false;
 
   fonctionAddition() {
@@ -48,6 +48,11 @@ class _SecondePageState extends State<SecondePage> {
     Produit("pizza", "4 fromage", 21, "assets/4_fromage.jpg", false,
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
   ];
+
+//Liste pour la quantiter
+  List<String> items = <String>['1', '2', '3', '4', '5'];
+  String dropdownValue = '1';
+
   @override
   Widget build(BuildContext context) {
     var produitSelectionner = produits.where((element) => element.valeurBool);
@@ -204,6 +209,26 @@ class _SecondePageState extends State<SecondePage> {
 
                                     //controller:
                                     // TextEditingController(text: 'Champ obligatoire'),
+                                  ),
+                                ),
+                                */
+                                /*
+                                Expanded(
+                                  child: DropdownButton(
+                                    onChanged: (String? newValue) {
+                                      setState(() {
+                                        dropdownValue = newValue!;
+                                      });
+                                    },
+                                    value: dropdownValue,
+                                    items: items.map<DropdownMenuItem<String>>(
+                                      (String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value),
+                                        );
+                                      },
+                                    ).toList(),
                                   ),
                                 ),
                                 */
