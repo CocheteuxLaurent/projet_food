@@ -64,45 +64,64 @@ class _PanierPageState extends State<PanierPage> {
             child: ListView.builder(
               itemCount: widget.produitSelectionner.length,
               itemBuilder: (BuildContext context, int index) {
-                return Center(
-                  child: Row(
-                    children: [
-                      Image(
-                        width: 100,
-                        image: AssetImage(
-                          widget.produitSelectionner
-                              .toList()[index]
-                              .imageProduit,
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Text(
+                return Card(
+                  margin: EdgeInsets.all(10),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image(
+                          width: 100,
+                          image: AssetImage(
                             widget.produitSelectionner
                                 .toList()[index]
-                                .nomProduit,
+                                .imageProduit,
                           ),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => CommandePage(
-                                            articlePanier: widget
-                                                .produitSelectionner.length,
-                                            produitSelectionner:
-                                                widget.produitSelectionner,
-                                          )));
-                            },
-                            child: Text('Commander'),
+                        ),
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              widget.produitSelectionner
+                                  .toList()[index]
+                                  .description,
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              widget.produitSelectionner
+                                  .toList()[index]
+                                  .nomProduit,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              widget.produitSelectionner.toList()[index].prix,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.red,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
             ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CommandePage()));
+            },
+            child: Text('Commander'),
           ),
         ],
       ),
