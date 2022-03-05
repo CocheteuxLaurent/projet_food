@@ -15,8 +15,6 @@ class SecondePage extends StatefulWidget {
 
 class _SecondePageState extends State<SecondePage> {
   int totalPanier = 0;
-  int sommePanier = 0; //variable pour la somme du panier
-  //int quantiter = 0; // variable pour la quantite rentrer
   bool checkbox = false;
 
   fonctionAddition() {
@@ -50,8 +48,11 @@ class _SecondePageState extends State<SecondePage> {
   ];
 
 //Liste pour la quantiter
-  List<String> items = <String>['1', '2', '3', '4', '5'];
+  /*List<int> items = <int>[1, 2, 3, 4, 5];
   String dropdownValue = '1';
+*/
+
+  String quantiter = "1"; // variable pour la quantite rentrer
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +79,7 @@ class _SecondePageState extends State<SecondePage> {
                           builder: (context) => PanierPage(
                                 articlePanier: produitSelectionner.length,
                                 produitSelectionner: produitSelectionner,
+                                quantiter: quantiter,
                               )));
                 },
                 icon: Icon(
@@ -232,6 +234,30 @@ class _SecondePageState extends State<SecondePage> {
                                   ),
                                 ),
                                 */
+
+                                Expanded(
+                                  child: DropdownButtonFormField(
+                                    items: [
+                                      DropdownMenuItem(
+                                        value: '1',
+                                        child: Text('1'),
+                                      ),
+                                      DropdownMenuItem(
+                                        value: '2',
+                                        child: Text('2'),
+                                      ),
+                                    ],
+                                    value: quantiter,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        quantiter != value;
+                                      });
+
+                                      //recuperer la valeur qui value d'ou le print
+                                      print(value);
+                                    },
+                                  ),
+                                ),
                                 Checkbox(
                                     value: produits[index].valeurBool,
                                     onChanged: (value) {

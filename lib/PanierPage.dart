@@ -6,7 +6,10 @@ import 'package:projet_food/DernierePage.dart';
 class PanierPage extends StatefulWidget {
   final articlePanier;
   final produitSelectionner;
-  const PanierPage({Key? key, this.articlePanier, this.produitSelectionner})
+  final quantiter;
+
+  const PanierPage(
+      {Key? key, this.articlePanier, this.produitSelectionner, this.quantiter})
       : super(key: key);
 
   @override
@@ -14,8 +17,14 @@ class PanierPage extends StatefulWidget {
 }
 
 class _PanierPageState extends State<PanierPage> {
+  num sommePanier = 0; //variable pour la somme du panier
+
   @override
   Widget build(BuildContext context) {
+    num somme = 0;
+    for (int i = 0; i < widget.produitSelectionner.length; i++) {
+      sommePanier = sommePanier + widget.produitSelectionner.toList()[i].prix;
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -54,6 +63,8 @@ class _PanierPageState extends State<PanierPage> {
                   'Votre Panier',
                   style: TextStyle(
                     fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
                   ),
                   textAlign: TextAlign.start,
                 ),
@@ -127,6 +138,30 @@ class _PanierPageState extends State<PanierPage> {
               },
             ),
           ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Montant à régler : ',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
+                  ),
+                ),
+                Text(
+                  sommePanier.toString() + '€',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          //Text(sommePanier.toString() + '€'),
           ElevatedButton(
             onPressed: () {
               Navigator.push(

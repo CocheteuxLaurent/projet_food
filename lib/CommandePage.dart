@@ -73,6 +73,8 @@ class _CommandePageState extends State<CommandePage> {
                   'Votre Commande',
                   style: TextStyle(
                     fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
                   ),
                   textAlign: TextAlign.start,
                 ),
