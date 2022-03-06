@@ -237,6 +237,17 @@ class _SecondePageState extends State<SecondePage> {
 
                                 Expanded(
                                   child: DropdownButtonFormField(
+                                    style: TextStyle(color: Colors.white),
+                                    decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                        borderSide: BorderSide(
+                                            color: Colors.orangeAccent),
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.orangeAccent,
+                                    ),
+                                    dropdownColor: Colors.orangeAccent,
                                     items: [
                                       DropdownMenuItem(
                                         value: '1',
