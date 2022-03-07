@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_food/Classes/classCategorie.dart';
+import 'package:projet_food/ProduitCategorie.dart';
 
 class CategoriePage extends StatefulWidget {
   const CategoriePage({Key? key}) : super(key: key);
@@ -22,68 +23,75 @@ class _CategoriePageState extends State<CategoriePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Categorie',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        centerTitle: true,
-        backgroundColor: Color.fromRGBO(111, 186, 255, 100),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_basket,
-              size: 30,
-              color: Colors.white,
-            ),
+        appBar: AppBar(
+          title: Text(
+            'Categorie',
+            style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-        ],
-      ),
-      body: Container(
-        child: ListView.builder(
-          itemCount: 8,
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 5.0,
-              color: Color.fromRGBO(111, 186, 255, 100),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
+          centerTitle: true,
+          backgroundColor: Color.fromRGBO(111, 186, 255, 100),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.shopping_basket,
+                size: 30,
+                color: Colors.white,
               ),
-              margin: EdgeInsets.all(20),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Text(
-                      categorie[index].nom,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Divider(
-                      thickness: 2,
-                      height: 30,
-                      indent: 100,
-                      color: Colors.white,
-                      endIndent: 100,
-                    ),
-                    Image(
-                      width: 40,
-                      height: 40,
-                      image: AssetImage(
-                        categorie[index].image,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            ),
+          ],
+        ),
+        body: GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProduitCategorie()),
             );
           },
-        ),
-      ),
-    );
+          child: Container(
+            child: ListView.builder(
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 5.0,
+                  color: Color.fromRGBO(111, 186, 255, 100),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  margin: EdgeInsets.all(20),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          categorie[index].nom,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Divider(
+                          thickness: 2,
+                          height: 30,
+                          indent: 100,
+                          color: Colors.white,
+                          endIndent: 100,
+                        ),
+                        Image(
+                          width: 40,
+                          height: 40,
+                          image: AssetImage(
+                            categorie[index].image,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ));
   }
 }
