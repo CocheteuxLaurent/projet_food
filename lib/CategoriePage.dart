@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:projet_food/Classes/classCategorie.dart';
 import 'package:projet_food/ProduitCategorie.dart';
+import 'package:badges/badges.dart';
 
 class CategoriePage extends StatefulWidget {
-  const CategoriePage({Key? key}) : super(key: key);
+  final articlePanier;
+  final produitSelectionner;
+  const CategoriePage({Key? key, this.articlePanier, this.produitSelectionner})
+      : super(key: key);
 
   @override
   State<CategoriePage> createState() => _CategoriePageState();
@@ -31,13 +35,21 @@ class _CategoriePageState extends State<CategoriePage> {
           centerTitle: true,
           backgroundColor: Color.fromRGBO(111, 186, 255, 100),
           actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.shopping_basket,
-                size: 30,
-                color: Colors.white,
+            Badge(
+              position: BadgePosition.topEnd(top: 5, end: 0),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.shopping_basket,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                ),
               ),
+              badgeContent: Text(widget.articlePanier.toString()),
+              badgeColor: Colors.white,
             ),
           ],
         ),
@@ -45,7 +57,11 @@ class _CategoriePageState extends State<CategoriePage> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProduitCategorie()),
+              MaterialPageRoute(
+                  builder: (context) => ProduitCategorie(
+                        articlePanier: widget.produitSelectionner.length,
+                        produitSelectionner: widget.produitSelectionner,
+                      )),
             );
           },
           child: Container(

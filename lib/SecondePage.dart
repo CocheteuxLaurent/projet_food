@@ -106,7 +106,10 @@ class _SecondePageState extends State<SecondePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoriePage()));
+                            builder: (context) => CategoriePage(
+                                  articlePanier: produitSelectionner.length,
+                                  produitSelectionner: produitSelectionner,
+                                )));
                   },
                   child: Text('Categories'),
                 ),
