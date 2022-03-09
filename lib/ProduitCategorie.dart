@@ -43,7 +43,6 @@ class _ProduitCategoriePageState extends State<ProduitCategorie> {
           ),
         ],
       ),
-      body: Column(),
     );
   }
 }
