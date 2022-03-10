@@ -6,6 +6,7 @@ import 'package:badges/badges.dart';
 class CategoriePage extends StatefulWidget {
   final articlePanier;
   final produitSelectionner;
+  final produitList;
   const CategoriePage({Key? key, this.articlePanier, this.produitSelectionner})
       : super(key: key);
 

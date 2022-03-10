@@ -109,6 +109,7 @@ class _SecondePageState extends State<SecondePage> {
                             builder: (context) => CategoriePage(
                                   articlePanier: produitSelectionner.length,
                                   produitSelectionner: produitSelectionner,
+                                  
                                 )));
                   },
                   child: Text('Categories'),
@@ -239,37 +240,41 @@ class _SecondePageState extends State<SecondePage> {
                                 */
 
                                 Expanded(
-                                  child: DropdownButtonFormField(
-                                    style: TextStyle(color: Colors.white),
-                                    decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        borderSide: BorderSide(
-                                            color: Colors.orangeAccent),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: DropdownButtonFormField(
+                                      style: TextStyle(color: Colors.white),
+                                      decoration: InputDecoration(
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          borderSide: BorderSide(
+                                              color: Colors.orangeAccent),
+                                        ),
+                                        filled: true,
+                                        fillColor: Colors.orangeAccent,
                                       ),
-                                      filled: true,
-                                      fillColor: Colors.orangeAccent,
-                                    ),
-                                    dropdownColor: Colors.orangeAccent,
-                                    items: [
-                                      DropdownMenuItem(
-                                        value: '1',
-                                        child: Text('1'),
-                                      ),
-                                      DropdownMenuItem(
-                                        value: '2',
-                                        child: Text('2'),
-                                      ),
-                                    ],
-                                    value: quantiter,
-                                    onChanged: (value) {
-                                      setState(() {
-                                        quantiter != value;
-                                      });
+                                      dropdownColor: Colors.orangeAccent,
+                                      items: [
+                                        DropdownMenuItem(
+                                          value: '1',
+                                          child: Text('1'),
+                                        ),
+                                        DropdownMenuItem(
+                                          value: '2',
+                                          child: Text('2'),
+                                        ),
+                                      ],
+                                      value: quantiter,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          quantiter != value;
+                                        });
 
-                                      //recuperer la valeur qui value d'ou le print
-                                      print(value);
-                                    },
+                                        //recuperer la valeur qui value d'ou le print
+                                        print(value);
+                                      },
+                                    ),
                                   ),
                                 ),
                                 Checkbox(
