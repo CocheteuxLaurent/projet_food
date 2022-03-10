@@ -24,8 +24,9 @@ class _PanierPageState extends State<PanierPage> {
     num somme = 0;
     //widget.quantiter.toString(int.parse(widget.quantiter)) *
     for (int i = 0; i < widget.produitSelectionner.length; i++) {
-      sommePanier = int.parse(widget.quantiter.toString()) * sommePanier +
-          widget.produitSelectionner.toList()[i].prix;
+      sommePanier = sommePanier +
+          widget.produitSelectionner.toList()[i].prix *
+              widget.produitSelectionner.toList()[i].quantite;
     }
     return Scaffold(
       appBar: AppBar(
