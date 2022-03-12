@@ -109,6 +109,7 @@ class _SecondePageState extends State<SecondePage> {
                             builder: (context) => CategoriePage(
                                   articlePanier: produitSelectionner.length,
                                   produitSelectionner: produitSelectionner,
+                                  produitList: produits,
                                 )));
                   },
                   child: Text('Categories'),
