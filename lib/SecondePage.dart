@@ -1,9 +1,10 @@
-import 'dart:convert';
+//import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:projet_food/CategoriePage.dart';
 import 'package:projet_food/PanierPage.dart';
 import 'package:projet_food/DetailsPage.dart';
+import 'package:projet_food/RecettePage.dart';
 import 'package:projet_food/Classes/classProduit.dart';
 
 class SecondePage extends StatefulWidget {
@@ -109,13 +110,22 @@ class _SecondePageState extends State<SecondePage> {
                             builder: (context) => CategoriePage(
                                   articlePanier: produitSelectionner.length,
                                   produitSelectionner: produitSelectionner,
-                                  produitList: produits,
+                                  //produitList: produits,
                                 )));
                   },
                   child: Text('Categories'),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RecettePage(
+                                  articlePanier: produitSelectionner.length,
+                                  produitSelectionner: produitSelectionner,
+                                  //produitList: produits,
+                                )));
+                  },
                   child: Text('Recettes'),
                 ),
               ],

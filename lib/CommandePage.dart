@@ -70,7 +70,7 @@ class _CommandePageState extends State<CommandePage> {
             child: Row(
               children: [
                 Text(
-                  'Votre Commande',
+                  'Votre Commmande',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -148,6 +148,36 @@ class _CommandePageState extends State<CommandePage> {
               },
             ),
           ),
+          /*
+          Container(
+            width: MediaQuery.of(context).size.width / 2,
+            child: TextFormField(
+              decoration: const InputDecoration(
+                border: UnderlineInputBorder(),
+                labelText: 'Entrer votre adresse',
+              ),
+              //obscureText: false,
+              //controller: TextEditingController(text: 'Champ obligatoire'),
+            ),
+          ),
+          */
+          /*Expanded(
+            child: Row(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    border: UnderlineInputBorder(),
+                    labelText: 'Entrer votre adresse',
+                  ),
+                  obscureText: false,
+                  //controller:
+                  // TextEditingController(text: 'Champ obligatoire'),
+                ),
+              ],
+            ),
+          ),
+          */
+          /*
           Expanded(
             child: Row(
               children: [
@@ -182,6 +212,43 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
+          */
+          /*
+          Expanded(
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Entrer votre adresse',
+                      ),
+                      obscureText: false,
+                      //controller:
+                      // TextEditingController(text: 'Champ obligatoire'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(0.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 2.5,
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Entrer votre numèro de carte',
+                      ),
+                      obscureText: true,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          */
           /*Padding(
             padding: EdgeInsets.all(10),
             child: TextFormField(

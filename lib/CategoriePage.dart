@@ -6,13 +6,13 @@ import 'package:badges/badges.dart';
 class CategoriePage extends StatefulWidget {
   final articlePanier;
   final produitSelectionner;
-  final produitList;
+  //final produitList;
 
   const CategoriePage({
     Key? key,
     this.articlePanier,
     this.produitSelectionner,
-    required this.produitList,
+    //required this.produitList,
   }) : super(key: key);
 
   @override
@@ -67,8 +67,8 @@ class _CategoriePageState extends State<CategoriePage> {
                   builder: (context) => ProduitCategorie(
                         articlePanier: widget.produitSelectionner.length,
                         produitSelectionner: widget.produitSelectionner,
-                        produitList: widget.produitList,
-                        nomCateg: categorie.length,
+                        //produitList: widget.produitList,
+                        //nomCateg: categorie.length,
                       )),
             );
           },
