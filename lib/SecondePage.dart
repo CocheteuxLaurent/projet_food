@@ -114,6 +114,12 @@ class _SecondePageState extends State<SecondePage> {
                                 )));
                   },
                   child: Text('Categories'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -127,6 +133,12 @@ class _SecondePageState extends State<SecondePage> {
                                 )));
                   },
                   child: Text('Recettes'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:projet_food/ConnexionCompte.dart';
 import 'package:projet_food/SecondePage.dart';
 
 void main() {
@@ -56,6 +57,30 @@ class _MyHomePageState extends State<MyHomePage> {
                       MaterialPageRoute(builder: (context) => SecondePage()));
                 },
                 child: Text('Commencer'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.redAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ConnexionComptePage()));
+                },
+                child: Text('Inscription'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.redAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
               ),
             ),
           ],

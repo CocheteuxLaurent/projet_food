@@ -24,7 +24,9 @@ class _PanierPageState extends State<PanierPage> {
     num somme = 0;
     //widget.produitSelectionner.toList()[i].quantiter
     for (int i = 0; i < widget.produitSelectionner.length; i++) {
-      sommePanier = sommePanier + widget.produitSelectionner.toList()[i].prix;
+      sommePanier = sommePanier +
+          widget.produitSelectionner.toList()[i].prix *
+              int.parse(widget.quantiter);
     }
     return Scaffold(
       appBar: AppBar(
@@ -174,6 +176,12 @@ class _PanierPageState extends State<PanierPage> {
                           )));
             },
             child: Text('Commander'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.redAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
           ),
         ],
       ),
