@@ -148,8 +148,7 @@ class _CommandePageState extends State<CommandePage> {
               },
             ),
           ),
-          /*
-          Container(
+          /* Container(
             width: MediaQuery.of(context).size.width / 2,
             child: TextFormField(
               decoration: const InputDecoration(
@@ -160,8 +159,8 @@ class _CommandePageState extends State<CommandePage> {
               //controller: TextEditingController(text: 'Champ obligatoire'),
             ),
           ),
-          */
-          /*Expanded(
+*/
+          Container(
             child: Row(
               children: [
                 TextFormField(
@@ -176,7 +175,7 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
-          */
+
           /*
           Expanded(
             child: Row(
