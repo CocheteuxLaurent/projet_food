@@ -31,21 +31,21 @@ class _SecondePageState extends State<SecondePage> {
 
   List<Produit> produits = [
     Produit("burger", "Burger", 7, "assets/Burger.png", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("burger", "Double Cheese", 9, "assets/Double_Cheese.png", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("burger", "Triple Cheese", 11, "assets/Triple_Cheese.png", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("burger", "Chicken Burger", 13, "assets/Burger_Poulet.png", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("pizza", "Orientale", 15, "assets/Orientale.jpg", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("pizza", "Chèvre miel", 17, "assets/Chevre_miel.jpg", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("pizza", "Chorizo", 19, "assets/Chorizo.jpg", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
     Produit("pizza", "4 fromage", 21, "assets/4_fromage.jpg", false,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."),
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 1),
   ];
 
 //Liste pour la quantiter

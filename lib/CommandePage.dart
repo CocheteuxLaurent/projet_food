@@ -16,26 +16,6 @@ class _CommandePageState extends State<CommandePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*
-      appBar: AppBar(
-        title: Text(
-          'Commande',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-        centerTitle: true,
-        backgroundColor: Color.fromRGBO(111, 186, 255, 100),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.shopping_basket,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-        ],
-      ),
-      */
       appBar: AppBar(
         title: Text(
           'Commande',
@@ -70,6 +50,23 @@ class _CommandePageState extends State<CommandePage> {
             child: Row(
               children: [
                 Text(
+                  'Finaliser votre commande',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ],
+            ),
+          ),
+          /*Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+            child: Row(
+              children: [
+                Text(
                   'Votre Commmande',
                   style: TextStyle(
                     fontSize: 20,
@@ -81,7 +78,8 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
-          Flexible(
+          */
+          /*Flexible(
             child: ListView.builder(
               itemCount: widget.produitSelectionner.length,
               itemBuilder: (BuildContext context, int index) {
@@ -148,6 +146,7 @@ class _CommandePageState extends State<CommandePage> {
               },
             ),
           ),
+          */
           /* Container(
             width: MediaQuery.of(context).size.width / 2,
             child: TextFormField(
@@ -160,19 +159,16 @@ class _CommandePageState extends State<CommandePage> {
             ),
           ),
 */
-          Container(
-            child: Row(
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
-                    labelText: 'Entrer votre adresse',
-                  ),
-                  obscureText: false,
-                  //controller:
-                  // TextEditingController(text: 'Champ obligatoire'),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              ],
+                hintText: 'Enter a email',
+              ),
+              //obscureText: true,
             ),
           ),
 
