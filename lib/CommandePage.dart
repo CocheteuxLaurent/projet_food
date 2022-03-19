@@ -61,111 +61,59 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: 'Adresse',
+                    ),
+                    obscureText: true,
+                  ),
                 ),
-                hintText: 'Enter a email',
               ),
-              //obscureText: true,
-            ),
-          ),
-
-          /*
-          Expanded(
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Entrer votre adresse',
+              Padding(
+                padding: const EdgeInsets.all(0.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      obscureText: false,
-                      //controller:
-                      // TextEditingController(text: 'Champ obligatoire'),
+                      hintText: 'Cryptogramme',
                     ),
+                    obscureText: true,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Entrer votre numèro de carte',
-                      ),
-                      obscureText: true,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          */
-          /*
-          Expanded(
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Entrer votre adresse',
-                      ),
-                      obscureText: false,
-                      //controller:
-                      // TextEditingController(text: 'Champ obligatoire'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2.5,
-                    child: TextFormField(
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Entrer votre numèro de carte',
-                      ),
-                      obscureText: true,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          */
-          /*Padding(
-            padding: EdgeInsets.all(10),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'Entrer votre adresse',
               ),
-              obscureText: true,
-            ),
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                border: UnderlineInputBorder(),
-                labelText: 'Entrer votre adresse',
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: 'code secret',
+                    ),
+                    obscureText: true,
+                  ),
+                ),
               ),
-              obscureText: true,
-            ),
-          ),*/
+            ],
+          ),
         ],
       ),
     );
