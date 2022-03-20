@@ -5,5 +5,9 @@ class Recette {
 
   Recette(this.id, this.nom, this.description);
 
-  Map<String, dynamic>
+  Map<String, dynamic> toMap(){
+    return(
+      
+    )
+  }
 }
