@@ -68,6 +68,16 @@ class _InscriptionCompteState extends State<InscriptionCompte> {
                 obscureText: true,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Sign in'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.redAccent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+            ),
           ],
         ),
       ),
