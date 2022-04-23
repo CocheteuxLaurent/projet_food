@@ -17,6 +17,7 @@ class SecondePage extends StatefulWidget {
 class _SecondePageState extends State<SecondePage> {
   int totalPanier = 0;
   bool checkbox = false;
+  //int qte;
 
   fonctionAddition() {
     totalPanier++;
@@ -26,8 +27,16 @@ class _SecondePageState extends State<SecondePage> {
     totalPanier--;
   }
 
-//fonction pour calculer la somme du panier
-  fonctionSommePanier() {}
+/*
+  void Recup(newqte) {
+    if (newqte == 1) {
+      newqte == quantiter;
+    } else if (newqte == 2) {
+      newqte == quantiter;
+    }
+  }
+*/
+  //List listMotif = [1, 2, 3, 4, 5];
 
   List<Produit> produits = [
     Produit("burger", "Burger", 7, "assets/Burger.png", false,
@@ -297,6 +306,41 @@ class _SecondePageState extends State<SecondePage> {
                                         print(value);
                                       },
                                     ),
+
+                                    /*
+                                    child: DropdownButtonFormField(
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        filled: true,
+                                        hintText: "Choisissez un motif",
+                                        hintStyle: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      value: qte,
+                                      icon: const Icon(Icons.arrow_drop_down),
+                                      iconSize: 36,
+                                      isExpanded: true,
+                                      onChanged: (newqte) {
+                                        Recup(newqte);
+                                      },
+                                      items: listMotif.map((valeurqte) {
+                                        return DropdownMenuItem(
+                                          value: valeurqte,
+                                          child: Text(
+                                            valeurqte,
+                                            style: const TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        );
+                                      }).toList(),
+                                    ),
+                                    */
                                   ),
                                 ),
                                 Checkbox(

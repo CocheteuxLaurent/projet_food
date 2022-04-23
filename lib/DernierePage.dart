@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_food/SecondePage.dart';
 
 class DernierePage extends StatefulWidget {
   const DernierePage({Key? key}) : super(key: key);
@@ -12,33 +13,57 @@ class _DernierePageState extends State<DernierePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/commandeValider.png"),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Commande en préparation',
-                style: TextStyle(fontSize: 18),
-                textAlign: TextAlign.center,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/commandeValider.png"),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  'Commande en préparation',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'La commande arrivera dans quelque minutes',
-                style: TextStyle(fontSize: 18),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  'La commande arrivera dans environ 20 min',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
               ),
-            ),
-            FlatButton(
-              onPressed: () {},
-              child: Text('Accueil'),
-              color: Colors.blue,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0)),
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SecondePage()));
+                },
+                child: Text(
+                  'Accueil',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.redAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

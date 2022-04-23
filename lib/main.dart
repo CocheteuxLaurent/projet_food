@@ -56,25 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SecondePage()));
                 },
-                child: Text('Commencer'),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.redAccent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
+                child: Text(
+                  'Commencer',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ConnexionComptePage()));
-                },
-                child: Text('Inscription'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.redAccent,
                   shape: RoundedRectangleBorder(

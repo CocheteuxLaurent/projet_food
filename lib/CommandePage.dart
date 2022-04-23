@@ -19,7 +19,11 @@ class _CommandePageState extends State<CommandePage> {
       appBar: AppBar(
         title: Text(
           'Commande',
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(111, 186, 255, 100),
@@ -52,7 +56,7 @@ class _CommandePageState extends State<CommandePage> {
                 Text(
                   'Finaliser votre commande',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
                   ),
@@ -61,6 +65,7 @@ class _CommandePageState extends State<CommandePage> {
               ],
             ),
           ),
+          /*
           Row(
             children: [
               Padding(
@@ -113,6 +118,83 @@ class _CommandePageState extends State<CommandePage> {
                 ),
               ),
             ],
+          ),
+          */
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    hintText: 'Entrer votre adresse Adresse',
+                  ),
+                  obscureText: false,
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    hintText: 'Code Carte Bnacaire',
+                  ),
+                  obscureText: true,
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    hintText: 'Cryptogramme',
+                  ),
+                  obscureText: true,
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DernierePage()));
+                  },
+                  child: Text(
+                    'Valider',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.redAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

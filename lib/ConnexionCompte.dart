@@ -56,6 +56,14 @@ class _ConnexionComptePageState extends State<ConnexionComptePage> {
                 ),
               ),
             ),
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(text: "Welcome To"),
+                  TextSpan(text: "sign up"),
+                ],
+              ),
+            ),
           ],
         ),
       ),
