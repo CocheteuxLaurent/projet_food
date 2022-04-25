@@ -18,7 +18,11 @@ class _DernierePageState extends State<DernierePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/commandeValider.png"),
+              Image.asset(
+                "assets/commandeValider.png",
+                height: 150,
+                width: 100,
+              ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
