@@ -17,7 +17,6 @@ class SecondePage extends StatefulWidget {
 class _SecondePageState extends State<SecondePage> {
   int totalPanier = 0;
   bool checkbox = false;
-  //int qte;
 
   fonctionAddition() {
     totalPanier++;
@@ -119,7 +118,7 @@ class _SecondePageState extends State<SecondePage> {
                             builder: (context) => CategoriePage(
                                   articlePanier: produitSelectionner.length,
                                   produitSelectionner: produitSelectionner,
-                                  //produitList: produits,
+                                  produitList: produits,
                                 )));
                   },
                   child: Text('Categories'),

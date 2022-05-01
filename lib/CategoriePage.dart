@@ -6,13 +6,13 @@ import 'package:badges/badges.dart';
 class CategoriePage extends StatefulWidget {
   final articlePanier;
   final produitSelectionner;
-  //final produitList;
+  final produitList;
 
   const CategoriePage({
     Key? key,
     this.articlePanier,
     this.produitSelectionner,
-    //required this.produitList,
+    required this.produitList,
   }) : super(key: key);
 
   @override
@@ -59,24 +59,24 @@ class _CategoriePageState extends State<CategoriePage> {
             ),
           ],
         ),
-        body: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => ProduitCategorie(
-                        articlePanier: widget.produitSelectionner.length,
-                        produitSelectionner: widget.produitSelectionner,
-                        //produitList: widget.produitList,
-                        //nomCateg: categorie.length,
-                      )),
-            );
-          },
-          child: Container(
-            child: ListView.builder(
-              itemCount: 8,
-              itemBuilder: (context, index) {
-                return Card(
+        body: Container(
+          child: ListView.builder(
+            itemCount: 8,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProduitCategorie(
+                              articlePanier: widget.produitSelectionner.length,
+                              produitSelectionner: widget.produitSelectionner,
+                              produitList: widget.produitList,
+                              nomCateg: categorie[index].nom,
+                            )),
+                  );
+                },
+                child: Card(
                   elevation: 5.0,
                   color: Color.fromRGBO(111, 186, 255, 100),
                   shape: RoundedRectangleBorder(
@@ -112,9 +112,9 @@ class _CategoriePageState extends State<CategoriePage> {
                       ],
                     ),
                   ),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ));
   }
