@@ -67,4 +67,15 @@ class DbHandler {
              nbfavoris INTEGER)
       ''');
   }
+
+  //Creer l'Utilisateur
+  Future<int?> saveData(Recipe recipe) async {
+    var dbRecette = await db;
+    var res = await dbRecette?.insert(
+      Table_Recip,
+      recipe.toMap(),
+    );
+    print(res);
+    return res;
+  }
 }
