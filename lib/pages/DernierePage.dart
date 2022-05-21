@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet_food/SecondePage.dart';
+import 'SecondePage.dart';
 
 class DernierePage extends StatefulWidget {
   const DernierePage({Key? key}) : super(key: key);
@@ -18,11 +18,7 @@ class _DernierePageState extends State<DernierePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                "assets/commandeValider.png",
-                height: 150,
-                width: 100,
-              ),
+              Image.asset("assets/commandeValider.png"),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(

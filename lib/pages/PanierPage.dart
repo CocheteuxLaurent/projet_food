@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projet_food/CommandePage.dart';
+import 'CommandePage.dart';
 import 'package:badges/badges.dart';
-import 'package:projet_food/DernierePage.dart';
 
 class PanierPage extends StatefulWidget {
   final articlePanier;
@@ -24,10 +23,11 @@ class _PanierPageState extends State<PanierPage> {
     int somme = 0;
     //widget.produitSelectionner.toList()[i].quantiter
     for (int i = 0; i < widget.produitSelectionner.length; i++) {
+      print(widget.produitSelectionner.toList()[i].quantiter);
+
       sommePanier = sommePanier +
           widget.produitSelectionner.toList()[i].prix *
-              int.parse(
-                  widget.produitSelectionner.toList()[i].quantiter.toString());
+              int.parse(widget.produitSelectionner.toList()[i].quantiter);
     }
     return Scaffold(
       appBar: AppBar(
@@ -97,14 +97,37 @@ class _PanierPageState extends State<PanierPage> {
                         Flexible(
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              widget.produitSelectionner
-                                  .toList()[index]
-                                  .description,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.orangeAccent,
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  widget.produitSelectionner
+                                      .toList()[index]
+                                      .description,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: Row(
+                                    children: [
+                                      Text('Qté: '),
+                                      Text(
+                                        widget.produitSelectionner
+                                            .toList()[index]
+                                            .quantiter
+                                            .toString(),
+                                        textAlign: TextAlign.start,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
