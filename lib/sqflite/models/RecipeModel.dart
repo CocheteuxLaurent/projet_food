@@ -30,4 +30,13 @@ class Recipe {
 
     return map;
   }
+
+  Recipe.fromMap(Map<String, dynamic> map) {
+    recip_id = map['recip_id'];
+    titre = map['titre'];
+    img = map['img'];
+    name = map['name'];
+    favoris = map['favoris'];
+    nbfavoris = map['nbfavoris'];
+  }
 }
