@@ -73,7 +73,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Connection'),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -116,7 +117,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onSaved: (val) => nameController.text = val!,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter username';
+                        return 'Entrer votre nom';
                       }
                       return null;
                     },
@@ -129,7 +130,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       filled: true,
                       label: Text(
-                        'Username',
+                        'nom',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -144,7 +145,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     validator: (value) =>
                         EmailValidator.validate(value.toString())
                             ? null
-                            : "Please enter a good mail",
+                            : "Entrer un email valide",
                     keyboardType: TextInputType.emailAddress,
                     controller: mailController,
                     decoration: InputDecoration(
@@ -168,7 +169,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onSaved: (val) => passwordController.text = val!,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter Password';
+                        return 'Entrer un Mot de passe';
                       }
                       return null;
                     },
@@ -183,7 +184,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       filled: true,
                       label: Text(
-                        'Password',
+                        'Mot de passe',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -200,7 +201,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     onSaved: (val) => passwordAgainController.text = val!,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter confirmation password';
+                        return 'Confirmer votre mot de passe';
                       }
                       return null;
                     },
@@ -212,7 +213,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       ),
                       filled: true,
                       label: Text(
-                        'Confirmation Password',
+                        'Confirmation Mot de passe',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -237,7 +238,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       color: Colors.blue,
                     ),
                     child: Text(
-                      'Registration',
+                      'Valider',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                     validator: (value) =>
                         EmailValidator.validate(value.toString())
                             ? null
-                            : "Please enter a good mail",
+                            : "Enrer un email valide",
                     keyboardType: TextInputType.emailAddress,
                     controller: mailController,
                     decoration: InputDecoration(
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                         passwordController.text = newValue!),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter password';
+                        return 'Entrer votre mot de passe';
                       }
                       return null;
                     },
@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       filled: true,
                       label: Text(
-                        'Password',
+                        'Mot de passe',
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Text(
-                        'Registration',
+                        'Se Connecter',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
