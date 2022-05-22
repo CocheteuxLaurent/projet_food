@@ -73,7 +73,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connection'),
+        title: Text('Inscription'),
         centerTitle: true,
       ),
       body: Column(
@@ -113,7 +113,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 // ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text('Inscrivez-vous dès maintenant 👋'),
+                  child: Text(
+                    'Inscrivez-vous dès maintenant 👋',
+                    style: TextStyle(fontSize: 20, color: Colors.blue),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

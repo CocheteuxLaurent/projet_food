@@ -84,11 +84,19 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Connection'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Connectez-vous dès maintenant 👋',
+              style: TextStyle(fontSize: 20, color: Colors.blue),
+            ),
+          ),
           Form(
             key: _formLoginKey,
             child: Column(
