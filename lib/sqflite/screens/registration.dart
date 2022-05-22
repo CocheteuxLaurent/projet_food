@@ -112,6 +112,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 //   ),
                 // ),
                 Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text('Inscrivez-vous dès maintenant 👋'),
+                ),
+                Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     onSaved: (val) => nameController.text = val!,
