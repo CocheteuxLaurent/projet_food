@@ -21,8 +21,6 @@ class DbHandler {
   static const String C_Image = 'img';
   static const String C_NameUser = 'nameUser';
   static const String C_Description = 'description';
-  static const String C_Favoris = 'favoris';
-  static const String C_NbFavoris = 'nbfavoris';
 
   DbHandler.internal();
 
@@ -62,13 +60,11 @@ class DbHandler {
              titre TEXT,
              img TEXT,
              nameUser TEXT,
-             description TEXT,
-             favoris TEXT,
-             nbfavoris INTEGER)
+             description TEXT)
       ''');
   }
 
-  //Creer l'Utilisateur
+  //Creer une recette
   Future<int?> saveData(Recipe recipe) async {
     var dbRecette = await db;
     var res = await dbRecette?.insert(

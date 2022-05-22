@@ -4,8 +4,6 @@ class Recipe {
   late String? img;
   late String? nameUser;
   late String? description;
-  late bool? favoris;
-  late int? nbfavoris;
 
   Recipe(
     this.recip_id,
@@ -13,8 +11,6 @@ class Recipe {
     this.img,
     this.nameUser,
     this.description,
-    this.favoris,
-    this.nbfavoris,
   );
 
   Map<String, dynamic> toMap() {
@@ -23,9 +19,7 @@ class Recipe {
       'titre': titre,
       'img': img,
       'nameUser': nameUser,
-      'description': description,
-      'favoris': favoris,
-      'nbfavoris': nbfavoris
+      'description': description
     };
 
     return map;
@@ -36,7 +30,5 @@ class Recipe {
     titre = map['titre'];
     img = map['img'];
     nameUser = map['nameUser'];
-    favoris = map['favoris'] == 1;
-    nbfavoris = map['nbfavoris'];
   }
 }
