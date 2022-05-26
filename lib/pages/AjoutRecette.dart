@@ -66,7 +66,7 @@ class _AjoutRecetteState extends State<AjoutRecette> {
                   TextFormField(
                     validator: (val) {
                       if (val == null || val.isEmpty) {
-                        return 'Le nom du plat !';
+                        return 'La description du plat !';
                       }
                       return null;
                     },
@@ -74,9 +74,10 @@ class _AjoutRecetteState extends State<AjoutRecette> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      hintText: 'Entrer le nom du plat',
+                      hintText: 'Entrer le descriptif',
                     ),
                     obscureText: false,
+                    maxLines: 5,
                   ),
                 ],
               ),
