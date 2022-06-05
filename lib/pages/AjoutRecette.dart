@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_food/pages/RecettePage.dart';
 
 class AjoutRecette extends StatefulWidget {
   AjoutRecette({Key? key}) : super(key: key);
@@ -85,7 +86,10 @@ class _AjoutRecetteState extends State<AjoutRecette> {
             Padding(
               padding: EdgeInsets.all(15.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (builder) => RecettePage()));
+                },
                 child: Text('Partager'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.redAccent,
