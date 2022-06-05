@@ -27,7 +27,7 @@ class _CategoriePageState extends State<CategoriePage> {
     Categorie("Gauffre", "assets/gaufres.png"),
     Categorie("Glace", "assets/cornet-de-glace.png"),
     Categorie("Cookie", "assets/biscuits.png"),
-    Categorie("Boisson", "assets/boissons-non-alcoolisees.png"),
+    Categorie("boisson", "assets/boissons-non-alcoolisees.png"),
   ];
   @override
   Widget build(BuildContext context) {
