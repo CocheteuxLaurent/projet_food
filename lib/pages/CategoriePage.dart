@@ -60,7 +60,7 @@ class _CategoriePageState extends State<CategoriePage> {
         ),
         body: Container(
           child: ListView.builder(
-            itemCount: 8,
+            itemCount: categorie.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
