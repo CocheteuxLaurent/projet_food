@@ -73,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
   //Cela est possible grâçe au pacquet SharedPreference qui permet de garder sur le smartphone des données local.
   Future setSP(UserModel user) async {
     final SharedPreferences sp = await _pref;
+    sp.setString('id', user.user_id.toString());
     sp.setString("email", user.email ?? '');
     sp.setString("username", user.username ?? '');
     print("sharedinng preferencinggg");

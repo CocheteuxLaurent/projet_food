@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
 import 'package:projet_food/pages/AjoutRecette.dart';
+import 'package:projet_food/sqflite/Database/DatabaseHandler.dart';
+import 'package:projet_food/sqflite/models/RecipeModel.dart';
 
 class RecettePage extends StatefulWidget {
   final articlePanier;
@@ -13,6 +15,16 @@ class RecettePage extends StatefulWidget {
 }
 
 class _RecettePageState extends State<RecettePage> {
+  var dbHelper;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    dbHelper = DbHandler();
+    DbHandler().initDb();
+    DbHandler().getRecipeData().then((value) => print(value));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +62,46 @@ class _RecettePageState extends State<RecettePage> {
               context, MaterialPageRoute(builder: (context) => AjoutRecette()));
         },
       ),
-      body: Center(),
+      body: Center(
+        child: Column(children: [
+          Expanded(
+            child: FutureBuilder<List<Recipe>>(
+              future: DbHandler().getRecip(),
+              // initialData: InitialData,
+              builder: (context, AsyncSnapshot snapshot) {
+                if (snapshot.hasData) {
+                  print(snapshot.data);
+                  // print(snapshot.data[0].titre.toString());
+                  return ListView.builder(
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Card(
+                          elevation: 2.0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: ListTile(
+                            title: Text(
+                              snapshot.data[index].titre.toString(),
+                            ),
+                            subtitle: Text(
+                              snapshot.data[index].description.toString(),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                } else if (snapshot.hasError) {
+                  return CircularProgressIndicator();
+                }
+                return Text('nothing');
+              },
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }

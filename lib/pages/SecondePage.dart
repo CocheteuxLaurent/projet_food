@@ -23,6 +23,7 @@ class _SecondePageState extends State<SecondePage> {
   final Future<SharedPreferences> _pref = SharedPreferences.getInstance();
   String? email;
   String? username;
+  String? id;
   @override
   void initState() {
     // TODO: implement initState
@@ -36,9 +37,11 @@ class _SecondePageState extends State<SecondePage> {
     setState(() {
       email = sp.getString('email');
       username = sp.getString('username');
+      id = sp.getString('id');
     });
     print('email sp:' + email!);
     print('username sp: ' + username!);
+    print('user_id' + id!);
   }
 
   fonctionAddition() {
@@ -96,18 +99,6 @@ class _SecondePageState extends State<SecondePage> {
         "Chorizo, Mozarella, Sauce tomate", '1'),
     Produit("pizza", "4 fromage", 21, "assets/4_fromage.jpg", false,
         "Gorgonzola, Mozarrella, Tallegio, Bel paese, Sauce tomate.", '1'),
-    Produit("boisson", "Coca", 2, "assets/Coca.jpg", false,
-        "Bouteille de coca de 50cl", '1'),
-    Produit("boisson", "Coca Cherry", 2, "assets/Coca Cherry.jpg", false,
-        "Bouteille de coca cherry de 50cl", '1'),
-    Produit("boisson", "Ice tea", 2, "assets/Ice tea.jpg", false,
-        "Bouteille de ice tea de 50cl", '1'),
-    Produit("boisson", "Oasis", 2, "assets/Oasis.jpg", false,
-        "Bouteille de oasis de 50cl", '1'),
-    Produit("boisson", "Schweppes", 2, "assets/Schweppes.jpg", false,
-        "Bouteille de schweppes de 50cl", '1'),
-    Produit("boisson", "Eau", 2, "assets/Eau.jpg", false,
-        "Bouteille d'eau de 50cl", '1'),
   ];
 
   String quantiter = "1"; // variable pour la quantite rentrer
