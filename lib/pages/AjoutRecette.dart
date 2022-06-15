@@ -188,7 +188,7 @@ class _AjoutRecetteState extends State<AjoutRecette> {
                 onPressed: () {
                   ajouteReccette();
                 },
-                child: Text('Partager'),
+                child: Text('créer'),
                 style: ElevatedButton.styleFrom(
                   primary: Colors.redAccent,
                   shape: RoundedRectangleBorder(
