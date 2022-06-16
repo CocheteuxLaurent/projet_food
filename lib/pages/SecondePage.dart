@@ -387,6 +387,18 @@ class _SecondePageState extends State<SecondePage> {
                                         value: '2',
                                         child: Text('2'),
                                       ),
+                                      DropdownMenuItem(
+                                        value: '3',
+                                        child: Text('3'),
+                                      ),
+                                      DropdownMenuItem(
+                                        value: '4',
+                                        child: Text('4'),
+                                      ),
+                                      DropdownMenuItem(
+                                        value: '5',
+                                        child: Text('5'),
+                                      ),
                                     ],
                                     value: quantiter,
                                     onChanged: (value) {

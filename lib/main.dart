@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
-                          'Food Delivery App',
+                          'Speed Eat',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
