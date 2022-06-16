@@ -24,7 +24,6 @@ class _CategoriePageState extends State<CategoriePage> {
   List<Categorie> categorie = [
     Categorie("burger", "assets/burger-au-fromage.png"),
     Categorie("pizza", "assets/pizza.png"),
-    Categorie("Gauffre", "assets/gaufres.png"),
     Categorie("Glace", "assets/cornet-de-glace.png"),
     Categorie("Cookie", "assets/biscuits.png"),
     Categorie("Boisson", "assets/boissons-non-alcoolisees.png"),
