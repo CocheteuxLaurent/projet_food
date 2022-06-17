@@ -59,7 +59,7 @@ class _SecondePageState extends State<SecondePage> {
         7,
         "assets/Burger.png",
         false,
-        " un steak, une tranche de cheddar, salade, tomate, sauce ketchup",
+        " trois steaks, une tranche de cheddar, bacon, salade, tomate, sauce ketchup",
         '1'),
     Produit(
         "burger",
@@ -67,7 +67,7 @@ class _SecondePageState extends State<SecondePage> {
         9,
         "assets/Double_Cheese.png",
         false,
-        "deux steak, deux tranche de cheddar, salade, tomate, sauce ketchup",
+        "deux steaks, deux tranches de cheddar, salade, tomate, sauce ketchup",
         '1'),
     Produit(
         "burger",
@@ -75,7 +75,7 @@ class _SecondePageState extends State<SecondePage> {
         10,
         "assets/Triple_Cheese.png",
         false,
-        "trois steak, trois tranche de cheddar, salade, tomate, sauce ketchup",
+        "trois steaks, trois tranches de cheddar, salade, tomate, sauce ketchup",
         '1'),
     Produit(
         "burger",
