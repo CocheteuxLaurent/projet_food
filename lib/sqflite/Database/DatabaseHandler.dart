@@ -68,7 +68,6 @@ class DbHandler {
              recip_id INTEGER PRIMARY KEY AUTOINCREMENT,
              titre TEXT,
              img TEXT,
-             nameUser TEXT,
              description TEXT)
       ''');
   }
